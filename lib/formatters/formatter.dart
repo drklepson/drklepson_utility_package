@@ -1,17 +1,19 @@
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class CustomFormatters extends MaskTextInputFormatter {
+  CustomFormatters({super.filter, super.initialText, super.mask, super.type})
+      : super();
   static String get _phoneMask => '0 (5##) ### ## ##';
   static String get _dateMask => 'G#.M#.20Y#';
   static String _codeMask(int length) => '#${'-#' * length}';
 
-  static CustomFormatters get phone => MaskTextInputFormatter(
+  static CustomFormatters get phone => CustomFormatters(
         mask: _phoneMask,
         type: MaskAutoCompletionType.eager,
         filter: {'#': RegExp('[0-9]')},
       );
 
-  static CustomFormatters get time => MaskTextInputFormatter(
+  static CustomFormatters get time => CustomFormatters(
         mask: _dateMask,
         type: MaskAutoCompletionType.eager,
         filter: {
@@ -22,7 +24,7 @@ class CustomFormatters extends MaskTextInputFormatter {
         },
       );
 
-  static CustomFormatters code(int length) => MaskTextInputFormatter(
+  static CustomFormatters code(int length) => CustomFormatters(
         mask: _codeMask(length - 1),
         type: MaskAutoCompletionType.eager,
         filter: {'#': RegExp('[0-9]')},
