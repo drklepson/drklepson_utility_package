@@ -4,14 +4,23 @@ import 'package:flutter/material.dart';
 
 /// Non-categorized context extensions
 extension ContextGeneral on BuildContext {
+  /// For get theme
+  ThemeData get theme => Theme.of(this);
+
+  /// For get MediaQuery
+  MediaQueryData get mediaQuery => MediaQuery.of(this);
+
+  /// For get brightness
+  Brightness get brightness => theme.brightness;
+
   /// For get colorScheme
-  ColorScheme get colorScheme => Theme.of(this).colorScheme;
+  ColorScheme get colorScheme => theme.colorScheme;
 
   /// For get textTheme
-  TextTheme get textTheme => Theme.of(this).textTheme;
+  TextTheme get textTheme => theme.textTheme;
 
   /// For get primaryColor
-  Color get primaryColor => Theme.of(this).colorScheme.primary;
+  Color get primaryColor => theme.colorScheme.primary;
 
   /// For get primaryContainerColor
   Color get primaryContainer => Theme.of(this).colorScheme.primaryContainer;
@@ -24,6 +33,8 @@ extension ContextGeneral on BuildContext {
 
   /// Get context height
   double get height => MediaQuery.of(this).size.height;
+
+  double get textScaleFactor => MediaQuery.of(this).textScaleFactor;
 }
 
 /// Navigation extensions on Context
@@ -75,6 +86,8 @@ extension ContextNavigator on BuildContext {
         arguments: arguments,
       );
 }
+
+
 
 // // extension ContextLoading on BuildContext {
 // //   Future<T?> loading<T>(

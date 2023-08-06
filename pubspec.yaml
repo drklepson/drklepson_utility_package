@@ -1,10 +1,10 @@
 name: drklepson_utility_package
 description: A new Flutter package project.
 version: 0.0.1
-homepage:
+
 
 environment:
-  sdk: '>=2.19.0-330.0.dev <3.0.0'
+  sdk: '^3.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
 
   mask_text_input_formatter: ^2.4.0
+  intl: ^0.18.1
     
 
 

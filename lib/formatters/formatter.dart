@@ -4,11 +4,12 @@ class CustomFormatters extends MaskTextInputFormatter {
   CustomFormatters({super.filter, super.initialText, super.mask, super.type})
       : super();
   static String get _phoneMask => '0 (5##) ### ## ##';
+  static String get _phoneMaskTen => '(###) ### ## ##';
   static String get _dateMask => 'G#.M#.20Y#';
   static String _codeMask(int length) => '#${'-#' * length}';
 
-  static CustomFormatters get phone => CustomFormatters(
-        mask: _phoneMask,
+  static CustomFormatters phone({bool tenNumber = true}) => CustomFormatters(
+        mask: tenNumber ? _phoneMaskTen : _phoneMask,
         type: MaskAutoCompletionType.eager,
         filter: {'#': RegExp('[0-9]')},
       );
