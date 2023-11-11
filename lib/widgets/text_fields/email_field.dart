@@ -14,7 +14,7 @@ class EmailFormField extends StatelessWidget {
     return TextFormField(
       controller: _emailController,
       autovalidateMode: AutovalidateMode.onUserInteraction,
-      validator: context.emailValidation,
+      validator: CustomValidator.email,
       keyboardType: TextInputType.emailAddress,
       textInputAction: TextInputAction.next,
       decoration: const InputDecoration(

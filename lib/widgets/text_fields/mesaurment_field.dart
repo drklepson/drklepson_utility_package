@@ -59,7 +59,7 @@ class MesaurmentFormField extends StatelessWidget {
               inputFormatters: [
                 DecimalInputFormatter(),
               ],
-              validator: (value) => context.numberValidation(
+              validator: (value) => CustomValidator.number(
                 value,
                 max: unit != null ? unit!.elementAt(index).maxValue : maxValue,
                 min: unit != null ? unit?.elementAt(index).maxValue : minValue,
