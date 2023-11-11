@@ -30,35 +30,31 @@ class CustomValidator {
     }
   }
 
-  static String? name(BuildContext context, String? value) =>
-      _$name(context, value);
+  static String? name(String? value) => _$name(value);
 
-  static String? email(BuildContext context, String? value) =>
-      _$email(context, value);
+  static String? email(String? value) => _$email(value);
 
-  static String? password(BuildContext context, String? value) =>
-      _$password(context, value);
+  static String? password(String? value) => _$password(value);
 
-  static String? date(BuildContext context, String? value) =>
-      _$date(context, value);
+  static String? date(String? value) => _$date(value);
 
-  static String? number(BuildContext context, String? value,
+  static String? number(String? value,
           {int? min, int? max, List<bool Function(num?)>? validators}) =>
-      _$number(context, value, min: min, max: max, validators: validators);
+      _$number(value, min: min, max: max, validators: validators);
 }
 
-extension ValidatorExtension on BuildContext {
-  String? nameValidation(String? value) => CustomValidator.name(this, value);
+// extension ValidatorExtension on BuildContext {
+//   String? nameValidation(String? value) => CustomValidator.name(this, value);
 
-  String? emailValidation(String? value) => CustomValidator.email(this, value);
+//   String? emailValidation(String? value) => CustomValidator.email(this, value);
 
-  String? passwordValidation(String? value) =>
-      CustomValidator.password(this, value);
+//   String? passwordValidation(String? value) =>
+//       CustomValidator.password(this, value);
 
-  String? dateValidation(String? value) => CustomValidator.date(this, value);
+//   String? dateValidation(String? value) => CustomValidator.date(this, value);
 
-  String? numberValidation(String? value,
-          {int? min, int? max, List<bool Function(num?)>? validators}) =>
-      CustomValidator.number(this, value,
-          min: min, max: max, validators: validators);
-}
+//   String? numberValidation(String? value,
+//           {int? min, int? max, List<bool Function(num?)>? validators}) =>
+//       CustomValidator.number(this, value,
+//           min: min, max: max, validators: validators);
+// }

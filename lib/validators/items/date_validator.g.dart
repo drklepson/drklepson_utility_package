@@ -1,6 +1,6 @@
 part of '../validator.dart';
 
-String? _$date(BuildContext context, String? value) {
+String? _$date(String? value) {
   if (value == null || value == '') return null;
   const errorText = 'Lütfen geçerli bir tarih giriniz.';
   // context.locale?.dateValidatorError ?? 'Lütfen geçerli bir tarih giriniz.';

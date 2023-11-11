@@ -1,6 +1,6 @@
 part of '../validator.dart';
 
-String? _$number(BuildContext context, String? value,
+String? _$number(String? value,
     {int? min, int? max, List<bool Function(num?)>? validators}) {
   if (value == null || value == '') return null;
   final deger = num.tryParse(value.replaceAll(',', '.'));
