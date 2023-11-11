@@ -1,4 +1,6 @@
+import 'package:flutter/services.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:turkish/turkish.dart';
 
 class CustomFormatters extends MaskTextInputFormatter {
   CustomFormatters({super.filter, super.initialText, super.mask, super.type})
@@ -29,5 +31,14 @@ class CustomFormatters extends MaskTextInputFormatter {
         mask: _codeMask(length - 1),
         type: MaskAutoCompletionType.eager,
         filter: {'#': RegExp('[0-9]')},
+      );
+
+  static TextInputFormatter uppercase({bool isTurkish = true}) =>
+      TextInputFormatter.withFunction(
+        (oldValue, newValue) => newValue.copyWith(
+          text: isTurkish
+              ? turkish.toUpperCase(newValue.text)
+              : newValue.text.toUpperCase(),
+        ),
       );
 }

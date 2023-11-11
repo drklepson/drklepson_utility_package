@@ -25,9 +25,6 @@ extension ContextGeneral on BuildContext {
   /// For get primaryContainerColor
   Color get primaryContainer => Theme.of(this).colorScheme.primaryContainer;
 
-  /// For get app special icon
-  IconData get mainIcon => Icons.handshake_outlined;
-
   /// Get context width of screen
   double get width => MediaQuery.of(this).size.width;
 
