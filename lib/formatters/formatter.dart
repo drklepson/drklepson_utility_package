@@ -9,6 +9,17 @@ class CustomFormatters extends MaskTextInputFormatter {
   static String get _phoneMaskTen => '(###) ### ## ##';
   static String get _dateMask => 'G#.M#.20Y#';
   static String _codeMask(int length) => '#${'-#' * length}';
+  static String get _aPuaniMask => 'P#.##';
+
+  static MaskTextInputFormatter get score => MaskTextInputFormatter(
+        mask: _aPuaniMask,
+        type: MaskAutoCompletionType.eager,
+        initialText: '45.00',
+        filter: {
+          'P': RegExp('[1-8]'),
+          '#': RegExp('[0-9]'),
+        },
+      );
 
   static CustomFormatters phone({bool tenNumber = true}) => CustomFormatters(
         mask: tenNumber ? _phoneMaskTen : _phoneMask,
