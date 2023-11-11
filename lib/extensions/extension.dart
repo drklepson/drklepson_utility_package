@@ -6,3 +6,4 @@ export 'date_extension.g.dart';
 export 'textstyle_extension.g.dart';
 export 'widgets_extension.g.dart';
 export 'string_extension.g.dart';
+export 'list_extension.g.dart';
