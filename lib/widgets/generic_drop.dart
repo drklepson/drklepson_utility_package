@@ -19,7 +19,7 @@ class GenericAutoCompDrop<T extends Object> extends StatelessWidget {
   });
 
   final void Function(T item) onSelected;
-  final List<T> items;
+  final Iterable<T> items;
   final String Function(T item) toStringMethod;
   final void Function()? onClearPressed;
   final Widget Function(T) itemView;
@@ -30,7 +30,7 @@ class GenericAutoCompDrop<T extends Object> extends StatelessWidget {
 
   FutureOr<Iterable<T>> optionsBuilder(
     TextEditingValue value,
-    List<T> kadroList,
+    Iterable<T> kadroList,
   ) {
     return value.text.isEmpty
         ? items
