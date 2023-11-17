@@ -1,6 +1,9 @@
 import 'package:drklepson_utility_package/widgets/circuler_prog_ind.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'dart:io';
+
+import 'package:device_info_plus/device_info_plus.dart';
 
 class Utility {
   static Widget futureBuilderWidget<T>(
@@ -69,5 +72,27 @@ class Utility {
       if (portraitUp || portrait) DeviceOrientation.portraitUp,
       if (portraitDown || portrait) DeviceOrientation.portraitDown,
     ]);
+  }
+
+  /// This function is for get platform version
+  /// Example:
+  /// ```dart
+  /// getPlatformVersion().then((value) => print(value));
+  /// ```
+  static Future<String> getPlatformVersion() async {
+    if (Platform.isAndroid) {
+      final androidInfo = await DeviceInfoPlugin().androidInfo;
+      final sdkInt = androidInfo.version.sdkInt;
+      return 'Android-$sdkInt';
+    }
+
+    if (Platform.isIOS) {
+      final iosInfo = await DeviceInfoPlugin().iosInfo;
+      final systemName = iosInfo.systemName;
+      final version = iosInfo.systemVersion;
+      return '$systemName-$version';
+    }
+
+    return 'unknow';
   }
 }
