@@ -65,12 +65,14 @@ class Utility {
     bool portraitDown = true,
     bool landscape = true,
     bool portrait = true,
+    bool unlock = false,
   }) {
     return SystemChrome.setPreferredOrientations([
-      if (landscapeRight || landscape) DeviceOrientation.landscapeRight,
-      if (landscapeLeft || landscape) DeviceOrientation.landscapeLeft,
-      if (portraitUp || portrait) DeviceOrientation.portraitUp,
-      if (portraitDown || portrait) DeviceOrientation.portraitDown,
+      if (landscapeRight || landscape || unlock)
+        DeviceOrientation.landscapeRight,
+      if (landscapeLeft || landscape || unlock) DeviceOrientation.landscapeLeft,
+      if (portraitUp || portrait || unlock) DeviceOrientation.portraitUp,
+      if (portraitDown || portrait || unlock) DeviceOrientation.portraitDown,
     ]);
   }
 
