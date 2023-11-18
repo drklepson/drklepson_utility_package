@@ -54,7 +54,7 @@ class ColorSchemeList extends StatelessWidget {
                       height: 50,
                       width: 100,
                     ),
-                    Text(color.toString().substring(10, 16)),
+                    Text('${color.toString().substring(10, 16)} ($text)'),
                   ],
                 ),
               ),
