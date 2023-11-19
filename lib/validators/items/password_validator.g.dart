@@ -1,7 +1,12 @@
 part of '../validator.dart';
 
+const _pattern =
+    r'^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[@#$%^&+=!()\-_\\|{}\[\]:;<>,.?\/]).*$';
+
+final passwordRegex = RegExp(_pattern);
+
 String? _$password(String? value) {
-  const pattern = r'^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$';
+  const pattern = _pattern;
   const error = '''
  Şifreniz en az 8 haneli olmalı ve
   en az 1 büyük, 1 küçük harf ve 1 sayı bulundurmalıdır.''';
