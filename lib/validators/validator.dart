@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 part 'items/email_validator.g.dart';
 part 'items/name_validator.g.dart';
 part 'items/password_validator.g.dart';

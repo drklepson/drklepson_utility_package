@@ -31,6 +31,7 @@ extension ContextGeneral on BuildContext {
   /// Get context height
   double get height => MediaQuery.of(this).size.height;
 
+  // ignore: deprecated_member_use
   double get textScaleFactor => MediaQuery.of(this).textScaleFactor;
 }
 

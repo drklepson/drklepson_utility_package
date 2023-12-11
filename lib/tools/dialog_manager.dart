@@ -59,8 +59,8 @@ class DialogManager {
         barrierDismissible: false,
         builder: builder ??= (context) {
           dialogContext = context;
-          return WillPopScope(
-            onWillPop: () async => false,
+          return PopScope(
+            canPop: false,
             child: Stack(
               clipBehavior: Clip.antiAlias,
               alignment: Alignment.center,
